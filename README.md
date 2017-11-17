@@ -1,7 +1,9 @@
 # SDD-Utils
 A couple of utilities that can be used with Stanford Drone Dataset.
 
-## 1. Create Pascal VOC style annotations
+Dataset is available [here](http://cvgl.stanford.edu/projects/uav_data/).
+
+## Create Pascal VOC style annotations
 This utility helps to convert the videos and annotations in Stanford Drone Dataset into Pascal VOC style images and annotations. 
 
 The utility basically does three tasks in the following sequence:
@@ -15,7 +17,8 @@ This will come handy when we want to test existing Object Detection algorithms o
 ### Prerequisites
 * ffmpeg library
 * python 2.7
-
+* THIS BRANCH IS ADAPTED TO FIT PY3
+* tested with py36 ubuntu conda
 
 ### Usage
 ```Python
@@ -81,4 +84,3 @@ SDD contains the following 'scenes' and corresponding videos:
 ### Citation
 A. Robicquet, A. Sadeghian, A. Alahi, S. Savarese, Learning Social Etiquette: Human Trajectory Prediction In Crowded Scenes in European Conference on Computer Vision (ECCV), 2016.
 
-Dataset is available [here](http://cvgl.stanford.edu/projects/uav_data/).
