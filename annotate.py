@@ -108,7 +108,7 @@ def annotate_frames(sdd_annotation_file, dest_path, filename_prefix, number_of_f
         ET.SubElement(size, "height").text = str(height)
         ET.SubElement(size, "depth").text = str(depth)
         ET.SubElement(annotation, "segmented").text = '0'
-        ET.SubElement(annotation, "filename").text = filename_prefix + str(frame_number)
+        ET.SubElement(annotation, "filename").text = filename_prefix + str(frame_number)+".jpg"
 
         annotations_in_frame = sdd_annotation[sdd_annotation[:, 5] == str(frame_number)]
 
