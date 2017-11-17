@@ -2,7 +2,7 @@ import os
 import subprocess
 import numpy as np
 import random
-import cPickle
+import _pickle as cPickle
 import cv2
 import math
 import xml.etree.cElementTree as ET
@@ -197,7 +197,7 @@ def split_and_annotate(num_training_images=None, num_val_images=None, num_testin
                 video_file = os.path.join(video_path, 'video.mov')
                 if count_files(jpeg_image_path, image_name_prefix) == 0:
                     # Split Video
-                    log('Splitting ' + video_file)
+                    #log('Splitting ' + video_file)
                     split_video(video_file, image_name_prefix)
                     log('Splitting ' + video_file + ' complete.')
 
