@@ -199,10 +199,10 @@ def split_and_annotate(num_training_images=None, num_val_images=None, num_testin
                     # Split Video
                     #log('Splitting ' + video_file)
                     split_video(video_file, image_name_prefix)
-                    log('Splitting ' + video_file + ' complete.')
+                    #log('Splitting ' + video_file + ' complete.')
 
                     # Annotate
-                    log('Annotating frames from ' + video_file)
+                    #log('Annotating frames from ' + video_file)
                     sdd_annotation_file = os.path.join(dataset_path, 'annotations', scene,
                                                        'video' + str(video_index), 'annotations.txt')
                     assert_path(sdd_annotation_file, 'Annotation file not found. '
@@ -210,10 +210,11 @@ def split_and_annotate(num_training_images=None, num_val_images=None, num_testin
                     dest_path = os.path.join(destination_path, 'Annotations')
                     number_of_frames = count_files(jpeg_image_path, image_name_prefix)
                     annotate_frames(sdd_annotation_file, dest_path, image_name_prefix, number_of_frames)
-                    log('Annotation Complete.')
+                    #log('Annotation Complete.')
 
                 else:
-                    log(video_file + ' is already split into frames. Skipping...')
+                    pass
+                    #log(video_file + ' is already split into frames. Skipping...')
 
                 # Create train-val-test split
                 number_of_frames = count_files(jpeg_image_path, image_name_prefix)
@@ -222,8 +223,8 @@ def split_and_annotate(num_training_images=None, num_val_images=None, num_testin
                     split_dataset_uniformly(number_of_frames, split_ratio, share, image_name_prefix)
                 else:
                     split_dataset(number_of_frames, split_ratio, image_name_prefix)
-                log('Successfully created train-val-test split.')
-    log('Done.')
+                #log('Successfully created train-val-test split.')
+    #log('Done.')
 
 
 if __name__ == '__main__':
